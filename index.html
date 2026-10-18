@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kliuba Oleh — Graphic Designer | STAND OUT OR SIT OUT</title>
+  <style>
+    
+    @font-face {
+      font-family: 'Be Vietnam Pro';
+      src: url('assets/fonts/BeVietnamPro-Light.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Be Vietnam Pro';
+      src: url('assets/fonts/BeVietnamPro-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Be Vietnam Pro';
+      src: url('assets/fonts/BeVietnamPro-Bold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Be Vietnam Pro';
+      src: url('assets/fonts/BeVietnamPro-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+
+    :root {
+      --mint: #DFEAE8;
+      --mint-muted: #BBC9C7;
+      --dark: #05090A;
+      --slate: #0E191E;
+      --font: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      --tex-img: url("assets/images/texture_overlay.jpg");
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: var(--font);
+      background: none;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    /* Shared Language Switcher Styling */
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--mint);
+      user-select: none;
+      position: relative;
+      z-index: 50;
+    }
+
+    .lang-btn {
+      padding: 2px 4px;
+      font-size: inherit;
+      font-weight: 400;
+      color: var(--mint-muted);
+      transition: color 0.15s ease;
+    }
+
+    .lang-btn.active {
+      color: var(--mint);
+      font-weight: 700;
+    }
+
+    .lang-btn:hover {
+      color: var(--mint);
+    }
+
+    /* ==========================================================================
+       1. DESKTOP (PC) VERSION — 1:1 Match with WebSitePc.jpg (Full Screen 100vw)
+       ========================================================================== */
+    .pc-version {
+      display: block;
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--mint);
+      color: var(--dark);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    /* Full-page #DFEAE8 + Photo 5 Papercut Texture with mix-blend-mode: overlay */
+    .pc-texture-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: var(--tex-img);
+      background-size: cover;
+      background-position: center;
+      mix-blend-mode: overlay;
+      opacity: 0.78;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .pc-texture-folds {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: var(--tex-img);
+      background-size: cover;
+      background-position: center;
+      mix-blend-mode: multiply;
+      opacity: 0.16;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Top Mint Strip above Black Header Bar */
+    .pc-top-strip {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      height: 2.8vw;
+      min-height: 24px;
+      max-height: 42px;
+    }
+
+    /* Full-width Black Header Bar */
+    .pc-header-bar {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      background-color: var(--dark);
+      color: var(--mint);
+      padding: 0.65vw 3.3vw;
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pc-header-id {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.08;
+    }
+
+    .pc-header-name {
+      font-size: clamp(0.85rem, 1.15vw, 1.35rem);
+      font-weight: 700;
+      color: var(--mint);
+    }
+
+    .pc-header-role {
+      font-size: clamp(0.85rem, 1.15vw, 1.35rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--mint);
+      letter-spacing: 0.02em;
+    }
+
+    .pc-header-bar .lang-switcher {
+      font-size: clamp(0.75rem, 0.95vw, 1.1rem);
+    }
+
+    /* PC Main Upper Stage (Left Content + Right Giant Cutout Portrait) */
+    .pc-upper-stage {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      display: block;
+    }
+
+    /* Giant Cutout Portrait on the Right (Spans across Hero, Projects, and Services) */
+    .pc-portrait-Layer {
+      position: absolute;
+      top: 0.4vw;
+      right: 2.2vw;
+      width: 42.5vw;
+      z-index: 25;
+      pointer-events: none;
+    }
+
+    .pc-portrait-Layer img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 12px 22px rgba(5, 9, 10, 0.22));
+    }
+
+    /* Slogan Block on Top-Left */
+    .pc-slogan-area {
+      position: relative;
+      z-index: 10;
+      padding: 1.5vw 0 1.4vw 3.1vw;
+      width: 60%;
+    }
+
+    .pc-slogan-title {
+      font-family: var(--font);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--dark);
+      font-size: 8.15vw;
+      line-height: 0.91;
+      letter-spacing: -0.025em;
+    }
+
+    .pc-slogan-title span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    /* Left-side Black Section Bar (Extends from left edge behind the portrait) */
+    .pc-left-black-bar {
+      position: relative;
+      z-index: 10;
+      width: 62vw;
+      background-color: var(--dark);
+      color: var(--mint);
+      padding: 0.55vw 0 0.55vw 6.5vw;
+      display: flex;
+      align-items: center;
+    }
+
+    .pc-left-black-bar h2,
+    .pc-full-black-bar h2 {
+      font-family: var(--font);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--mint);
+      font-size: 2.05vw;
+      line-height: 1.05;
+      letter-spacing: 0.01em;
+    }
+
+    /* PC Projects Row (All 3 Projects Side-by-Side) */
+    .pc-projects-row {
+      position: relative;
+      z-index: 15;
+      width: 56vw;
+      padding: 2.6vw 0 2.5vw 6.5vw;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4.5vw;
+      align-items: start;
+    }
+
+    .pc-project-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .pc-project-thumb {
+      display: block;
+      width: 100%;
+      aspect-ratio: 0.74;
+      background-color: var(--dark);
+      border: 1px solid rgba(5, 9, 10, 0.35);
+      box-shadow: 0 4px 14px rgba(5, 9, 10, 0.14);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .pc-project-thumb:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 22px rgba(5, 9, 10, 0.26);
+    }
+
+    .pc-project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pc-project-caption {
+      margin-top: 0.55vw;
+      font-size: 0.92vw;
+      font-weight: 600;
+      line-height: 1.22;
+      color: var(--dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: opacity 0.2s ease;
+    }
+
+    .pc-project-caption:hover {
+      opacity: 0.7;
+    }
+
+    /* PC Services Row (3 Outlined Boxes in One Horizontal Line) */
+    .pc-services-row {
+      position: relative;
+      z-index: 15;
+      width: 55vw;
+      padding: 2.6vw 0 3.2vw 3.3vw;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 2.1vw;
+    }
+
+    .pc-outlined-pill {
+      width: 14.2vw;
+      min-width: 120px;
+      height: 2.65vw;
+      min-height: 30px;
+      border: 1px solid var(--dark);
+      background-color: transparent;
+      color: var(--dark);
+      font-family: var(--font);
+      font-size: 1.05vw;
+      font-weight: 400;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    a.pc-outlined-pill:hover {
+      background-color: var(--dark);
+      color: var(--mint);
+      font-weight: 700;
+      transform: translateY(-2px);
+    }
+
+    /* PC Contacts Full-Width Black Bar */
+    .pc-full-black-bar {
+      position: relative;
+      z-index: 20;
+      width: 100%;
+      background-color: var(--dark);
+      color: var(--mint);
+      padding: 0.55vw 0 0.55vw 6.5vw;
+      display: flex;
+      align-items: center;
+    }
+
+    /* PC Contacts Row with Dashed Connectors */
+    .pc-contacts-row {
+      position: relative;
+      z-index: 20;
+      width: 100%;
+      padding: 2.8vw 3.3vw 3.1vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.2vw;
+    }
+
+    .pc-dashed-line {
+      flex: 1;
+      height: 0;
+      border-top: 1.8px dashed var(--dark);
+      opacity: 0.85;
+    }
+
+    /* PC Footer Bar */
+    .pc-footer-bar {
+      position: relative;
+      z-index: 20;
+      width: 100%;
+      background-color: var(--dark);
+      color: var(--mint-muted);
+      padding: 0.85vw 3.3vw;
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: clamp(0.75rem, 0.92vw, 1.05rem);
+      font-weight: 400;
+    }
+
+    .pc-footer-left {
+      display: flex;
+      align-items: center;
+      gap: 2.2vw;
+    }
+
+    .pc-footer-link {
+      color: var(--mint-muted);
+      transition: color 0.2s ease;
+    }
+
+    .pc-footer-link:hover {
+      color: var(--mint);
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       2. MOBILE VERSION — 1:1 Match with WebSite.jpg (Full Screen 100vw)
+       ========================================================================== */
+    .mobile-version {
+      display: none;
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--dark);
+      color: var(--mint);
+      overflow: hidden;
+    }
+
+    .mob-mint-surface {
+      position: relative;
+      background-color: var(--mint);
+      color: var(--dark);
+      isolation: isolate;
+    }
+
+    .mob-mint-surface::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--tex-img);
+      background-size: cover;
+      background-position: center;
+      mix-blend-mode: overlay;
+      opacity: 0.65;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .mob-top-strip {
+      width: 100%;
+      height: 8.8vw;
+      min-height: 28px;
+    }
+
+    .mob-header {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      background-color: var(--dark);
+      color: var(--mint);
+      padding: 2.8vw 9vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mob-header-id {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.08;
+      position: relative;
+      z-index: 12;
+    }
+
+    .mob-header-name {
+      font-size: 4.1vw;
+      font-weight: 700;
+      color: var(--mint);
+    }
+
+    .mob-header-role {
+      font-size: 4.1vw;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--mint);
+    }
+
+    .mob-header .lang-switcher {
+      font-size: 3.3vw;
+    }
+
+    /* Mobile Hero Stage */
+    .mob-hero-stage {
+      position: relative;
+      width: 100%;
+      background-color: var(--mint);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      overflow: visible;
+    }
+
+    .mob-hero-texture {
+      position: absolute;
+      inset: 0;
+      background-image: var(--tex-img);
+      background-size: cover;
+      background-position: center;
+      mix-blend-mode: overlay;
+      opacity: 0.78;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .mob-hero-folds {
+      position: absolute;
+      inset: 0;
+      background-image: var(--tex-img);
+      background-size: cover;
+      background-position: center;
+      mix-blend-mode: multiply;
+      opacity: 0.16;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .mob-black-wedge {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 29%;
+      background-color: var(--dark);
+      clip-path: polygon(0% 58%, 50% 0%, 100% 58%, 100% 100%, 0% 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .mob-portrait-wrap {
+      position: relative;
+      z-index: 20;
+      width: 68vw;
+      margin-top: -5.5vw;
+      margin-bottom: -4.2vw;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    .mob-portrait-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .mob-slogan-block {
+      position: relative;
+      z-index: 15;
+      width: 100%;
+      background-color: var(--dark);
+      color: var(--mint);
+      padding: 0 0 11vw;
+      text-align: center;
+    }
+
+    .mob-slogan-line {
+      display: block;
+      font-family: var(--font);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--mint);
+      font-size: 16.2vw;
+      line-height: 0.92;
+      letter-spacing: -0.025em;
+      white-space: nowrap;
+    }
+
+    .mob-slogan-line + .mob-slogan-line {
+      margin-top: 5vw;
+    }
+
+    /* Mobile Section Divider Bar */
+    .mob-section-bar {
+      width: 100%;
+      padding: 2.2vw 4vw;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mob-section-bar h2 {
+      position: relative;
+      z-index: 2;
+      font-family: var(--font);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 4.3vw;
+      color: var(--dark);
+      letter-spacing: 0.01em;
+    }
+
+    /* Mobile Projects Carousel */
+    .mob-projects-sec {
+      width: 100%;
+      background-color: var(--dark);
+      padding: 7.5vw 4vw 11vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mob-carousel-row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4.5vw;
+    }
+
+    .mob-arrow-btn {
+      width: 8vw;
+      height: 8vw;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mint-muted);
+    }
+
+    .mob-arrow-btn svg {
+      width: 4.5vw;
+      height: 4.5vw;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .mob-project-card {
+      width: 37.5vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mob-project-img-link {
+      display: block;
+      width: 100%;
+      aspect-ratio: 0.74;
+      overflow: hidden;
+      background-color: var(--slate);
+    }
+
+    .mob-project-img-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mob-project-title-link {
+      margin-top: 2.5vw;
+      font-size: 3.6vw;
+      font-weight: 500;
+      color: var(--mint);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    /* Mobile Services & Contacts Outlined Boxes */
+    .mob-boxes-sec {
+      width: 100%;
+      background-color: var(--dark);
+      padding: 6.5vw 15.5vw 7.5vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4.2vw;
+    }
+
+    .mob-row-two {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mob-row-one {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mob-outlined-box {
+      width: 27.5vw;
+      height: 4.8vw;
+      min-height: 22px;
+      border: 1px solid var(--mint);
+      color: var(--mint);
+      font-size: 2.8vw;
+      font-weight: 400;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Mobile Footer Bar */
+    .mob-footer {
+      width: 100%;
+      padding: 2.2vw 9vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 3.3vw;
+      font-weight: 400;
+      color: var(--dark);
+    }
+
+    .mob-footer span,
+    .mob-footer a {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ==========================================================================
+       AUTOMATIC DEVICE SWITCHING (PC >= 768px | MOBILE < 768px)
+       ========================================================================== */
+    @media (max-width: 767px) {
+      .pc-version {
+        display: none !important;
+      }
+      .mobile-version {
+        display: block !important;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .pc-version {
+        display: block !important;
+      }
+      .mobile-version {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       DESKTOP (PC) VERSION — 1:1 REPLICATION OF WebSitePc.jpg
+       ======================================================================== -->
+  <div class="pc-version" id="pc-root">
+    <div class="pc-texture-overlay" aria-hidden="true"></div>
+    <div class="pc-texture-folds" aria-hidden="true"></div>
+
+    <!-- Top Mint Strip -->
+    <div class="pc-top-strip" aria-hidden="true"></div>
+
+    <!-- Full-Width Black Header Bar -->
+    <header class="pc-header-bar">
+      <div class="pc-header-id">
+        <span class="pc-header-name" data-i18n="header_name">Kliuba Oleh</span>
+        <span class="pc-header-role" data-i18n="header_role">GRAPHIC DESIGNER</span>
+      </div>
+
+      <div class="lang-switcher" role="group" aria-label="Language Switcher">
+        <button type="button" class="lang-btn" data-lang-switch="uk">UA</button>
+        <span>/</span>
+        <button type="button" class="lang-btn active" data-lang-switch="en">EN</button>
+      </div>
+    </header>
+
+    <!-- Upper Widescreen Stage: Left Slogan/Projects/Services + Right Giant Cutout Portrait -->
+    <div class="pc-upper-stage">
+      <!-- Right Giant Cutout Portrait -->
+      <div class="pc-portrait-Layer">
+        <img src="assets/images/portrait_cutout.webp" alt="Kliuba Oleh — Graphic Designer" />
+      </div>
+
+      <!-- Slogan -->
+      <section class="pc-slogan-area" aria-label="Slogan">
+        <h1 class="pc-slogan-title">
+          <span>STAND OUT</span>
+          <span>OR SIT OUT</span>
+        </h1>
+      </section>
+
+      <!-- PROJECTS Bar -->
+      <div class="pc-left-black-bar">
+        <h2 data-i18n="sec_projects">PROJECTS</h2>
+      </div>
+
+      <!-- 3 Side-by-Side Projects -->
+      <section class="pc-projects-row" aria-label="Projects">
+        <article class="pc-project-item">
+          <a href="https://www.behance.net/gallery/254928655/PACKAGING-LABEL-COFFEE-Monolith" target="_blank" rel="noopener noreferrer" class="pc-project-thumb">
+            <img src="assets/images/work_1_monolith.jpg" alt="Coffee Packaging — Monolith" />
+          </a>
+          <a href="https://www.behance.net/gallery/254928655/PACKAGING-LABEL-COFFEE-Monolith" target="_blank" rel="noopener noreferrer" class="pc-project-caption" data-i18n="work_1_pc">
+            Coffee Packaging
+          </a>
+        </article>
+
+        <article class="pc-project-item">
+          <a href="https://www.behance.net/gallery/254931957/BRAND-IDENTITY-PACKAGING-kgntv" target="_blank" rel="noopener noreferrer" class="pc-project-thumb">
+            <img src="assets/images/work_2_kgntv.jpg" alt="Sports Nutrition Identity — KGNTV" />
+          </a>
+          <a href="https://www.behance.net/gallery/254931957/BRAND-IDENTITY-PACKAGING-kgntv" target="_blank" rel="noopener noreferrer" class="pc-project-caption" data-i18n="work_2_pc">
+            Sports Nutrition<br />Identity
+          </a>
+        </article>
+
+        <article class="pc-project-item">
+          <a href="https://www.behance.net/gallery/252596695/BRAND-IDENTITY-Moduq" target="_blank" rel="noopener noreferrer" class="pc-project-thumb">
+            <img src="assets/images/work_3_moduq.jpg" alt="Modular Furniture Identity — Moduq" />
+          </a>
+          <a href="https://www.behance.net/gallery/252596695/BRAND-IDENTITY-Moduq" target="_blank" rel="noopener noreferrer" class="pc-project-caption" data-i18n="work_3_pc">
+            Modular Furniture<br />Identity
+          </a>
+        </article>
+      </section>
+
+      <!-- SERVICES Bar -->
+      <div class="pc-left-black-bar">
+        <h2 data-i18n="sec_services">SERVICES</h2>
+      </div>
+
+      <!-- 3 Horizontal Outlined Service Boxes -->
+      <section class="pc-services-row" aria-label="Services">
+        <div class="pc-outlined-pill" data-i18n="srv_packaging">Packaging</div>
+        <div class="pc-outlined-pill" data-i18n="srv_branding">Branding</div>
+        <div class="pc-outlined-pill" data-i18n="srv_third">Logo</div>
+      </section>
+    </div>
+
+    <!-- CONTACTS Full-Width Black Bar -->
+    <div class="pc-full-black-bar">
+      <h2 data-i18n="sec_contacts">CONTACTS</h2>
+    </div>
+
+    <!-- CONTACTS Row with Dashed Connectors -->
+    <section class="pc-contacts-row" aria-label="Contacts">
+      <a href="https://t.me/rasssll_evans" target="_blank" rel="noopener noreferrer" class="pc-outlined-pill">Telegram</a>
+      <div class="pc-dashed-line" aria-hidden="true"></div>
+      <a href="https://api.whatsapp.com/send/?phone=380931319391" target="_blank" rel="noopener noreferrer" class="pc-outlined-pill">WhatsApp</a>
+      <div class="pc-dashed-line" aria-hidden="true"></div>
+      <a href="https://www.instagram.com/rasssll_evans/?hl=en" target="_blank" rel="noopener noreferrer" class="pc-outlined-pill">Instagram</a>
+    </section>
+
+    <!-- Full-Width Black Footer Bar -->
+    <footer class="pc-footer-bar">
+      <div class="pc-footer-left">
+        <span>Behance:</span>
+        <a href="https://www.behance.net/rasssll_evans" target="_blank" rel="noopener noreferrer" class="pc-footer-link">@rasssll_evans</a>
+      </div>
+      <div>Designed by @rasssll_evans in 2026</div>
+    </footer>
+  </div>
+
+  <!-- ========================================================================
+       MOBILE VERSION — 1:1 REPLICATION OF WebSite.jpg
+       ======================================================================== -->
+  <div class="mobile-version" id="mobile-root">
+    <!-- Top Mint Strip -->
+    <div class="mob-top-strip mob-mint-surface" aria-hidden="true"></div>
+
+    <!-- Mobile Black Header -->
+    <header class="mob-header">
+      <div class="mob-header-id">
+        <span class="mob-header-name" data-i18n="header_name">Kliuba Oleh</span>
+        <span class="mob-header-role" data-i18n="header_role">GRAPHIC DESIGNER</span>
+      </div>
+
+      <div class="lang-switcher" role="group" aria-label="Language Switcher Mobile">
+        <button type="button" class="lang-btn" data-lang-switch="uk">UA</button>
+        <span>/</span>
+        <button type="button" class="lang-btn active" data-lang-switch="en">EN</button>
+      </div>
+    </header>
+
+    <!-- Mobile Hero Stage -->
+    <section aria-label="Hero Mobile">
+      <div class="mob-hero-stage">
+        <div class="mob-hero-texture" aria-hidden="true"></div>
+        <div class="mob-hero-folds" aria-hidden="true"></div>
+        <div class="mob-black-wedge" aria-hidden="true"></div>
+
+        <div class="mob-portrait-wrap">
+          <img src="assets/images/portrait_cutout.webp" alt="Kliuba Oleh — Graphic Designer" />
+        </div>
+      </div>
+
+      <div class="mob-slogan-block">
+        <h2>
+          <span class="mob-slogan-line">STAND OUT</span>
+          <span class="mob-slogan-line">OR SIT OUT</span>
+        </h2>
+      </div>
+    </section>
+
+    <!-- Mobile PROJECTS Bar -->
+    <div class="mob-section-bar mob-mint-surface">
+      <h2 data-i18n="sec_projects">PROJECTS</h2>
+    </div>
+
+    <!-- Mobile Projects Carousel -->
+    <section class="mob-projects-sec" aria-label="Projects Mobile">
+      <div class="mob-carousel-row">
+        <button type="button" class="mob-arrow-btn" id="mob-prev-project" aria-label="Previous project">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+
+        <div class="mob-project-card">
+          <a href="https://www.behance.net/gallery/254928655/PACKAGING-LABEL-COFFEE-Monolith" target="_blank" rel="noopener noreferrer" class="mob-project-img-link" id="mob-project-link">
+            <img src="assets/images/work_1_monolith.jpg" alt="Coffee Packaging" id="mob-project-img" />
+          </a>
+          <a href="https://www.behance.net/gallery/254928655/PACKAGING-LABEL-COFFEE-Monolith" target="_blank" rel="noopener noreferrer" class="mob-project-title-link" id="mob-project-title">
+            Coffee Packaging
+          </a>
+        </div>
+
+        <button type="button" class="mob-arrow-btn" id="mob-next-project" aria-label="Next project">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Mobile SERVICES Bar -->
+    <div class="mob-section-bar mob-mint-surface">
+      <h2 data-i18n="sec_services">SERVICES</h2>
+    </div>
+
+    <!-- Mobile Services 2-over-1 Boxes -->
+    <section class="mob-boxes-sec" aria-label="Services Mobile">
+      <div class="mob-row-two">
+        <div class="mob-outlined-box" data-i18n="srv_packaging">Packaging</div>
+        <div class="mob-outlined-box" data-i18n="srv_branding">Branding</div>
+      </div>
+      <div class="mob-row-one">
+        <div class="mob-outlined-box" data-i18n="srv_third">Logo</div>
+      </div>
+    </section>
+
+    <!-- Mobile CONTACTS Bar -->
+    <div class="mob-section-bar mob-mint-surface">
+      <h2 data-i18n="sec_contacts">CONTACTS</h2>
+    </div>
+
+    <!-- Mobile Contacts 1-over-2 Boxes -->
+    <section class="mob-boxes-sec" aria-label="Contacts Mobile">
+      <div class="mob-row-one">
+        <a href="https://t.me/rasssll_evans" target="_blank" rel="noopener noreferrer" class="mob-outlined-box">Telegram</a>
+      </div>
+      <div class="mob-row-two">
+        <a href="https://api.whatsapp.com/send/?phone=380931319391" target="_blank" rel="noopener noreferrer" class="mob-outlined-box">WhatsApp</a>
+        <a href="https://www.instagram.com/rasssll_evans/?hl=en" target="_blank" rel="noopener noreferrer" class="mob-outlined-box">Instagram</a>
+      </div>
+    </section>
+
+    <!-- Mobile Footer Bar -->
+    <footer class="mob-footer mob-mint-surface">
+      <span>Behance:</span>
+      <a href="https://www.behance.net/rasssll_evans" target="_blank" rel="noopener noreferrer">@rasssll_evans</a>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var projectsData = [
+        {
+          img: "assets/images/work_1_monolith.jpg",
+          url: "https://www.behance.net/gallery/254928655/PACKAGING-LABEL-COFFEE-Monolith",
+          title_en: "Coffee Packaging",
+          title_uk: "Паковання кави"
+        },
+        {
+          img: "assets/images/work_2_kgntv.jpg",
+          url: "https://www.behance.net/gallery/254931957/BRAND-IDENTITY-PACKAGING-kgntv",
+          title_en: "Sports Nutrition Identity",
+          title_uk: "Айдентика спортивного харчування"
+        },
+        {
+          img: "assets/images/work_3_moduq.jpg",
+          url: "https://www.behance.net/gallery/252596695/BRAND-IDENTITY-Moduq",
+          title_en: "Modular Furniture Identity",
+          title_uk: "Айдентика модульних меблів"
+        }
+      ];
+
+      var i18n = {
+        en: {
+          header_name: "Kliuba Oleh",
+          header_role: "GRAPHIC DESIGNER",
+          sec_projects: "PROJECTS",
+          sec_services: "SERVICES",
+          sec_contacts: "CONTACTS",
+          srv_packaging: "Packaging",
+          srv_branding: "Branding",
+          srv_third: "Logo",
+          work_1_pc: "Coffee Packaging",
+          work_2_pc: "Sports Nutrition\nIdentity",
+          work_3_pc: "Modular Furniture\nIdentity"
+        },
+        uk: {
+          header_name: "Клюба Олег",
+          header_role: "ГРАФІЧНИЙ ДИЗАЙНЕР",
+          sec_projects: "ПРОЄКТИ",
+          sec_services: "ПОСЛУГИ",
+          sec_contacts: "КОНТАКТИ",
+          srv_packaging: "Паковання",
+          srv_branding: "Айдентика",
+          srv_third: "Поліграфія",
+          work_1_pc: "Паковання кави",
+          work_2_pc: "Айдентика спортивного\nхарчування",
+          work_3_pc: "Айдентика модульних\nмеблів"
+        }
+      };
+
+      var currentLang = "en";
+      var currentSlide = 0;
+
+      var mobImg = document.getElementById("mob-project-img");
+      var mobLink = document.getElementById("mob-project-link");
+      var mobTitle = document.getElementById("mob-project-title");
+
+      function renderMobileSlide() {
+        var item = projectsData[currentSlide];
+        mobImg.src = item.img;
+        mobImg.alt = currentLang === "uk" ? item.title_uk : item.title_en;
+        mobLink.href = item.url;
+        mobTitle.href = item.url;
+        mobTitle.textContent = currentLang === "uk" ? item.title_uk : item.title_en;
+      }
+
+      function setLang(lang) {
+        if (!i18n[lang]) return;
+        currentLang = lang;
+        document.documentElement.setAttribute("lang", lang);
+        document.documentElement.setAttribute("data-lang", lang);
+
+        var nodes = document.querySelectorAll("[data-i18n]");
+        for (var i = 0; i < nodes.length; i++) {
+          var key = nodes[i].getAttribute("data-i18n");
+          if (i18n[lang][key]) {
+            var val = i18n[lang][key];
+            if (val.indexOf("\n") !== -1) {
+              var parts = val.split("\n");
+              nodes[i].textContent = "";
+              nodes[i].appendChild(document.createTextNode(parts[0]));
+              nodes[i].appendChild(document.createElement("br"));
+              nodes[i].appendChild(document.createTextNode(parts[1]));
+            } else {
+              nodes[i].textContent = val;
+            }
+          }
+        }
+
+        var langBtns = document.querySelectorAll("[data-lang-switch]");
+        for (var j = 0; j < langBtns.length; j++) {
+          if (langBtns[j].getAttribute("data-lang-switch") === lang) {
+            langBtns[j].classList.add("active");
+          } else {
+            langBtns[j].classList.remove("active");
+          }
+        }
+
+        renderMobileSlide();
+
+        try {
+          localStorage.setItem("kliuba_site_lang", lang);
+        } catch (e) {}
+      }
+
+      document.getElementById("mob-prev-project").addEventListener("click", function () {
+        currentSlide = (currentSlide - 1 + projectsData.length) % projectsData.length;
+        renderMobileSlide();
+      });
+
+      document.getElementById("mob-next-project").addEventListener("click", function () {
+        currentSlide = (currentSlide + 1) % projectsData.length;
+        renderMobileSlide();
+      });
+
+      var langButtons = document.querySelectorAll("[data-lang-switch]");
+      for (var k = 0; k < langButtons.length; k++) {
+        langButtons[k].addEventListener("click", function (e) {
+          setLang(e.currentTarget.getAttribute("data-lang-switch"));
+        });
+      }
+
+      try {
+        var saved = localStorage.getItem("kliuba_site_lang");
+        if (saved && i18n[saved]) {
+          setLang(saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</body>
+</html>
